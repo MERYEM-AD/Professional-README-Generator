@@ -86,23 +86,29 @@ const questions = [
 
 ]; //  array of object 
 
-inquirer
-  .prompt(questions)
-  .then((answers) => {
-    console.log(answers);
-    const readmeFile = generateMarkdown(answers);
-
-    fs.writeFile('README.md', readmeFile, (err) => 
-      err ? console.log(err) : console.log('The ReadMe file generated Successfully !!')
-    );
-  });
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => 
+    err ? console.log(err) : console.log('The ReadMe file generated Successfully !!')
+  );
+
+
+}
 
 // TODO: Create a function to initialize app
-function init() {} //standart format of readme file
+function init() {
+
+    inquirer
+    .prompt(questions)
+    .then((answers) => {
+     // console.log(answers);
+     writeToFile('README.md', generateMarkdown(answers));
+    });
+  
+
+} 
 
 // Function call to initialize app
 init();
