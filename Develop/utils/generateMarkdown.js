@@ -1,24 +1,29 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+const { clear } = require('console');
+const fs = require ('fs');
+// renderLicenseBadge is a function that returns a license badge based on which license is passed in
  function renderLicenseBadge(license) {
+
  }
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
+// renderLicenseLink is a function that returns the license link
+  function renderLicenseLink(license) {
+
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// renderLicenseSection is  function that returns the license section of README
 function renderLicenseSection(license) {
+
 }
 
+// // generateMarkdown is a function to generate markdown for README
+function generateMarkdown(data) { 
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) { // data is the answers 
+  const backTicks ='```';
+
+  renderLicenseSection(data.license);
+
   return `# Project Name :  ${data.projectName}
  
-  [![License: ${data.license}](${renderLicenseBadge(data.license)})](${renderLicenseSection(data.license)})
-  //renderLicenseSection
+  ![License: ${data.license}](${renderLicenseBadge(data.license)})
   ## Description:
   ${data.description}
   ## Table of Contents 
@@ -28,25 +33,28 @@ function generateMarkdown(data) { // data is the answers
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
-  - [Github](#github)
+  - [Copyright](#copyright)
   ## Installation
-  to install dependencies run this command :
-  > ${data.cInstall}
+  to install dependencies , run this following command :
+${backTicks} \n ${data.cInstall}\n ${backTicks}
   ## Usage
-  > ${data.usage}
-  > ${data.cRun}
+${backTicks} \n ${data.usage}\n ${backTicks}
   ## License
   this Project is licensed under ${data.license} license.
   ## Contributing
-  > ${data.contribution}
+${data.contribution}
   ## Tests
-  Watch [the Demonstation video](https://google.com/) to know how can you use the application.
-
+  to run test , run this following command :
+${backTicks} \n ${data.cTest}\n ${backTicks}
   ## Questions
-  iF you have any questions you can contact me by email : ${data.email}
-  ## Github
-  Follow me on [my Github account](https://github.com/${data.username}) . 
+  Watch [the Demonstation video](https://google.com/) to know how can you use the application.\n
+  iF you have any questions about the repo you can contact me by email : ${data.email}.\n
+  Follow me on [my Github account](https://github.com/${data.username}).
+  ## Copyright
+
+   
 `;
 }
 
 module.exports = generateMarkdown;
+
