@@ -2,16 +2,36 @@ const { clear } = require('console');
 const fs = require ('fs');
 // renderLicenseBadge is a function that returns a license badge based on which license is passed in
  function renderLicenseBadge(license) {
-
+ // ['MIT','APPACHE 2.0','GPL 3.0','BSD 3','NONE'],
+ switch(license){
+      case 'MIT' : return 'https://img.shields.io/badge/license-MIT-green';break;
+      case 'APPACHE 2.0' : return 'https://img.shields.io/badge/license-APPACHE%202.0-blue';break;
+      case 'GPL 3.0' : return 'https://img.shields.io/badge/license-GPL%203.0-pink' ;break;
+      case 'BSD 3' : return 'https://img.shields.io/badge/license-BSD%203--Clause-blue';break;
+      default: return "No Licence";
+        }
  }
 // renderLicenseLink is a function that returns the license link
   function renderLicenseLink(license) {
-
+    switch(license){
+      case 'MIT' : return './License/MIT.txt';break;
+      case 'APPACHE 2.0' : return './License/APPACHE 2.txt';break;
+      case 'GPL 3.0' : return './License/GPL 3.txt' ;break;
+      case 'BSD 3' : return './License/BSD 3.txt' ; break;
+      default: return "./License/empty.txt";
+    }
 }
 
 // renderLicenseSection is  function that returns the license section of README
 function renderLicenseSection(license) {
-
+fs.readFile(`${renderLicenseLink(license)}`, 'utf8',(error, data) =>
+  {if (error){console.error(error) }else{
+    fs.appendFile('./README.md', `${data}`, (err) =>
+    err ? console.error(err) : console.log('Copyright section generated Successfully !!')
+  );
+  
+    }}
+);
 }
 
 // // generateMarkdown is a function to generate markdown for README
