@@ -22,7 +22,8 @@ const fs = require ('fs');
     }
 }
 
-// renderLicenseSection is  function that returns the license section of README
+// renderLicenseSection is function that embend the copyright license into the generated ReadMe file instead of return a link
+//and redirect the user to a webpage to read the license used.
 function renderLicenseSection(license) {
 fs.readFile(`${renderLicenseLink(license)}`, 'utf8',(error, data) =>
   {if (error){console.error(error) }else{
