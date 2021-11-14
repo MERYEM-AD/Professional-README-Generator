@@ -31,7 +31,7 @@ Fork the repo and makes changes
   ## Questions
   Watch [the walkthrough video](https://drive.google.com/file/d/1jkXtyGPJbIWC_NdDINtnr0y9qOfhhUgB/view) that demonstrates the functionality of the application.
 
-  iF you have any questions about the repo you can contact me by email : adiri.meryem.mw@gmail.com.
+  iF you have any questions about [the repo](https://github.com/MERYEM-AD/Professional-README-Generator/tree/main/Develop) you can contact me by email : adiri.meryem.mw@gmail.com.
 
   Follow me on [my Github account](https://github.com/MERYEM-AD).
   ## Copyright
