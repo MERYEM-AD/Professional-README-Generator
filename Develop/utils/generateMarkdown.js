@@ -58,9 +58,9 @@ function generateMarkdown(data) {
   to install dependencies , run this following command :
 ${backTicks} \n ${data.cInstall}\n ${backTicks}
   ## Usage
-${backTicks} \n ${data.usage}\n ${backTicks}
+${data.usage}\n
   ## License
-  this Project is licensed under ${data.license} license.
+  this Project is licensed under **${data.license}** license.
   ## Contributing
 ${data.contribution}
   ## Tests
